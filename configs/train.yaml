@@ -1,0 +1,27 @@
+model:
+  model_name: "unsloth/llama-3-8b-bnb-4bit"
+  max_seq_length: 1024
+  load_in_4bit: true
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+training:
+  learning_rate: 0.0002
+  batch_size: 4
+  gradient_accumulation_steps: 8
+  epochs: 1
+  optimizer: "adamw_8bit"
+  weight_decay: 0.01
+  lr_scheduler_type: "linear"
+  warmup_steps: 5
+  seed: 3407
+  output_dir: "outputs"
+
+data:
+  train_path: "sample_data/train.csv"
+  test_path: "sample_data/test.csv"
+  sample_ratio: 0.5

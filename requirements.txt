@@ -1,0 +1,14 @@
+# Core libraries
+unsloth
+torch
+xformers
+transformers
+datasets
+trl
+peft
+pyyaml
+pandas
+accelerate
+bitsandbytes
+sentencepiece
+protobuf

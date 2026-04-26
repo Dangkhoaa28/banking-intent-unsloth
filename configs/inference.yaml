@@ -1,0 +1,12 @@
+# Inference configuration
+# The checkpoint_path points to the directory containing:
+#   - adapter_config.json
+#   - adapter_model.safetensors
+#   - tokenizer.json, tokenizer_config.json
+# The base model (LLaMA-3-8B) will be auto-downloaded from HuggingFace on first run.
+
+model:
+  checkpoint_path: "outputs"
+  base_model: "unsloth/llama-3-8b-bnb-4bit"
+  max_seq_length: 1024
+  load_in_4bit: true   # Set to false for CPU mode (auto-handled)
