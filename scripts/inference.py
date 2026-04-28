@@ -41,7 +41,7 @@ class IntentClassification:
                 )
                 FastLanguageModel.for_inference(self.model)
                 self._mode = "unsloth"
-                print("✅ Model loaded with Unsloth (GPU accelerated)")
+                print("Model loaded with Unsloth (GPU accelerated)")
                 
             except (ImportError, Exception) as e:
                 print(f"Unsloth not available ({e}), falling back to transformers+peft...")
@@ -102,9 +102,9 @@ class IntentClassification:
         self.model = PeftModel.from_pretrained(base_model, checkpoint_path)
         self.model.eval()
         self._mode = f"transformers+peft ({self.device})"
-        print(f"✅ Model loaded with transformers+peft on {self.device}")
+        print(f"Model loaded with transformers+peft on {self.device}")
         if self.device == "cpu":
-            print("⚠️  CPU mode: inference will be slow (~30-60s per prediction)")
+            print("CPU mode: inference will be slow (~30-60s per prediction)")
 
     def __call__(self, message):
         """
@@ -161,7 +161,7 @@ if __name__ == "__main__":
     
     # Initialize the classifier
     print("=" * 60)
-    print("🏦 BANKING INTENT CLASSIFICATION")
+    print("BANKING INTENT CLASSIFICATION")
     print("=" * 60)
     
     classifier = IntentClassification(model_path=config_path)

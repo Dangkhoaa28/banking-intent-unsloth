@@ -27,7 +27,7 @@ def evaluate(config_path="configs/inference.yaml", test_path="sample_data/test.c
         df_test = df_test.head(max_samples)
     
     print("=" * 60)
-    print("📊 BANKING INTENT - TEST SET EVALUATION")
+    print("BANKING INTENT - TEST SET EVALUATION")
     print("=" * 60)
     print(f"   Test samples: {len(df_test)}")
     print(f"   Config: {config_path}")
@@ -40,7 +40,7 @@ def evaluate(config_path="configs/inference.yaml", test_path="sample_data/test.c
     y_true = []
     y_pred = []
     
-    print("\n📊 Running evaluation...")
+    print("\nRunning evaluation...")
     for idx, row in df_test.iterrows():
         pred = classifier(row['text'])
         y_true.append(row['intent'])
@@ -53,12 +53,12 @@ def evaluate(config_path="configs/inference.yaml", test_path="sample_data/test.c
     # Results
     accuracy = accuracy_score(y_true, y_pred)
     print(f"\n{'=' * 60}")
-    print(f"🎯 FINAL ACCURACY: {accuracy:.4f} ({accuracy*100:.2f}%)")
+    print(f"FINAL ACCURACY: {accuracy:.4f} ({accuracy*100:.2f}%)")
     print(f"{'=' * 60}")
     
     # Classification report (top 20 classes)
     all_labels = sorted(set(y_true + y_pred))
-    print(f"\n📋 Classification Report (showing {min(20, len(all_labels))} classes):")
+    print(f"\nClassification Report (showing {min(20, len(all_labels))} classes):")
     print(classification_report(y_true, y_pred, labels=all_labels[:20], zero_division=0))
     
     # Save results
@@ -69,7 +69,7 @@ def evaluate(config_path="configs/inference.yaml", test_path="sample_data/test.c
     })
     results_df["correct"] = results_df["true_intent"] == results_df["predicted_intent"]
     results_df.to_csv("sample_data/test_results.csv", index=False)
-    print(f"✅ Detailed results saved to: sample_data/test_results.csv")
+    print(f"Detailed results saved to: sample_data/test_results.csv")
     
     return accuracy
 

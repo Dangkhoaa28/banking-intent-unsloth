@@ -8,7 +8,7 @@ This repository contains the complete, modular source code for fine-tuning a Lar
 
 ---
 
-## 👨‍🏫 Guide for Lecturer / Evaluator
+##  Guide 
 
 This project has been structured to follow industry best practices, separating preprocessing, training, and inference into modular scripts. The configurations are centralized in YAML files. 
 
@@ -18,7 +18,7 @@ The standalone `inference.py` script is highly robust: **it auto-detects your ha
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/banking-intent-unsloth.git
+git clone https://github.com/Dangkhoaa28/banking-intent-unsloth.git
 cd banking-intent-unsloth
 
 # 2. Install dependencies
@@ -29,7 +29,7 @@ pip install -r requirements.txt
 
 Since the LoRA adapters (~160MB) may not be included directly in the repo due to size limits, please download them and place them in the `outputs/` folder.
 
-📥 **[Download Model Checkpoint (outputs.zip) Here](YOUR_GOOGLE_DRIVE_LINK_HERE)**
+**[Download Model Checkpoint (outputs.zip) Here](https://drive.google.com/drive/u/0/folders/1GbxQhmK-SZ8RgNzt1ImJJEuHpqCVPwGJ)**
 
 Ensure the folder structure looks exactly like this:
 ```text
@@ -67,7 +67,7 @@ python scripts/evaluate.py
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 banking-intent-unsloth
@@ -95,7 +95,7 @@ banking-intent-unsloth
 
 ---
 
-## ⚙️ Hyperparameters Used (train.yaml)
+##  Hyperparameters Used (train.yaml)
 
 To ensure reproducibility, all hyperparameters exactly match the Kaggle notebook:
 
@@ -112,15 +112,15 @@ To ensure reproducibility, all hyperparameters exactly match the Kaggle notebook
 
 ---
 
-## 🎥 Video Demonstration
+##  Video Demonstration
 
 The video below demonstrates how the inference script is executed, displays predictions for sample inputs, and shows the final accuracy obtained on the test set.
 
-📺 **[Watch Demo Video Here](YOUR_GOOGLE_DRIVE_VIDEO_LINK_HERE)**
+ **[Watch Demo Video Here](https://drive.google.com/drive/u/0/folders/1GbxQhmK-SZ8RgNzt1ImJJEuHpqCVPwGJ)**
 
 ---
 
 **Course:** Applications of Natural Language Processing in Industry  
 **Lecturer:** Dr. Nguyen Hong Buu Long  
 **Institution:** University of Science - VNUHCM  
-**Student:** [YOUR_NAME] - [YOUR_STUDENT_ID]
+**Student:** [Nguyen Dang Khoa] - [23120134]

@@ -12,9 +12,9 @@ def preprocess(sample_ratio=0.5, seed=3407):
     try:
         df_train = pd.read_parquet(train_url)
         df_test = pd.read_parquet(test_url)
-        print("✅ Tải dữ liệu thành công bằng Pandas!")
+        print("Tải dữ liệu thành công bằng Pandas!")
     except Exception as e:
-        print(f"❌ Lỗi tải trực tiếp: {e}")
+        print(f"Lỗi tải trực tiếp: {e}")
         print("Đang thử phương án dự phòng (PolyAI/banking77)...")
         ds = load_dataset("PolyAI/banking77")
         df_train = ds['train'].to_pandas()
@@ -76,7 +76,7 @@ def preprocess(sample_ratio=0.5, seed=3407):
     df_train_sampled[['text', 'intent']].to_csv("sample_data/train.csv", index=False)
     df_test[['text', 'intent']].to_csv("sample_data/test.csv", index=False)
     
-    print(f"✅ Dataset prepared: {len(df_train_sampled)} train samples, {len(df_test)} test samples.")
+    print(f"Dataset prepared: {len(df_train_sampled)} train samples, {len(df_test)} test samples.")
 
 if __name__ == "__main__":
     preprocess(sample_ratio=0.5, seed=3407)
